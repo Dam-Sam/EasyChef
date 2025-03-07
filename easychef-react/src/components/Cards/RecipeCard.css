@@ -1,0 +1,33 @@
+.my-card {
+    width: 100%;
+    border: none;
+  }
+  
+  .my-card-img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .my-card-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .my-card-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .my-card-text div {
+    margin-bottom: 10px;
+  }
+  
+  .my-card-button {
+    background-color: #f0ad4e;
+    border: none;
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto; /* add margin auto to center the button */
+  }
+  

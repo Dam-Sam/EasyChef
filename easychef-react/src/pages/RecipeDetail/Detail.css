@@ -1,0 +1,119 @@
+.recipe_body {
+    background-image: url("backgroud_food.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }  
+
+
+.detail_container {
+    opacity: 0.9;
+    background-color: lightblue;
+    border-radius: 5px;
+    padding: 50px;
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .detail-header {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 27px;
+    letter-spacing: 1px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .detail-subheader {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .detail-text {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .detail-list {
+    list-style-type: none;
+    margin-bottom: 20px;
+  }
+  
+  .detail-list li {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .detail-form {
+    margin-bottom: 20px;
+  }
+  
+  .detail-form input[type="number"],
+  .detail-form input[type="text"] {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    color: #333;
+    padding: 5px 10px;
+    margin-right: 10px;
+  }
+  
+  .detail-form input[type="number"]:focus,
+  .detail-form input[type="text"]:focus {
+    border-color: #f37216;
+    box-shadow: none;
+  }
+  
+  .detail-form button {
+    display: inline-block;
+    border-radius: 0;
+    background-color: #f37216;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .detail-form button:hover {
+    background-color: #ff8c56;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .detail-form button:focus {
+    background-color: #f37216;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .detail-button {
+    border-radius: 0;
+    background-color: #f37216;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .detail-button:hover {
+    background-color: #ff8c56;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .detail-button:focus {
+    background-color: #f37216;
+    border: none;
+    box-shadow: none;
+  }
+  

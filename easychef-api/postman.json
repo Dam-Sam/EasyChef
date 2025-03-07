@@ -1,0 +1,921 @@
+{
+	"info": {
+		"_postman_id": "4a0f142e-ee7e-48fe-904e-4e141efe0376",
+		"name": "p3 collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26312689"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/accounts/signup/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2MTYwLCJpYXQiOjE2ODA5Njk3NjAsImp0aSI6ImVjYjM5Y2MwNGE3YjQ5N2VhNzU2OWNiMTMzN2JjOTQ2IiwidXNlcl9pZCI6MX0.WDlZ3XZArLbeMCw93B6rL1729-q2SJxRHhZoH7fVKhc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "max",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Zhang",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "max.zhang@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Max",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234567",
+							"type": "text"
+						},
+						{
+							"key": "password1",
+							"value": "1234567",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/accounts/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/accounts/login/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Max",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234567",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/accounts/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/accounts/edit/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "zzz",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/accounts/edit/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"edit",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/createingre/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"rice\",\r\n    \"quantity\": \"200 g\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/createingre/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"createingre",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/createingre/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"salt\",\r\n    \"quantity\": \"200 g\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/createingre/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"createingre",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/createstep/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "add rice",
+							"type": "text"
+						},
+						{
+							"key": "prep_time",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "cooking_time",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/Max/OneDrive/图片/微信图片_20221109002132.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/createstep/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"createstep",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/createstep/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "add salt and fry",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/createstep/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"createstep",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/create/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"fried rice no salt\",\r\n    \"diets\": \"Sugar free\",\r\n    \"cuisine\": \"Chinese\",\r\n    \"serving\": 4,\r\n    \"ingredients\": [\r\n        1\r\n    ],\r\n    \"steps\": [\r\n        1\r\n    ],\r\n    \"prep_time\": 10,\r\n    \"cooking_time\": 35,\r\n    \"base_recipe\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/2/change_serving/20/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/2/change_serving/20/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"2",
+						"change_serving",
+						"20",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/2/add/4/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/2/add/4/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"2",
+						"add",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/1/add/4/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/1/add/4/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"1",
+						"add",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/empty/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/empty/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"empty",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/1/rate/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "rating",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/1/rate/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"1",
+						"rate",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/1/comment/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "comment",
+							"value": "good",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/Max/OneDrive/图片/微信图片_20221109002132.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/1/comment/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"1",
+						"comment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/myrecipes/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/myrecipes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"myrecipes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/markedrecipes/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/markedrecipes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"markedrecipes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/allrecipes/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/allrecipes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"allrecipes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/popular_on_rating/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/popular_on_rating/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"popular_on_rating",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/popular_on_marked/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/popular_on_marked/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"popular_on_marked",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/recipes/1/create_with_base/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/recipes/1/create_with_base/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"recipes",
+						"1",
+						"create_with_base",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/search/ByRecipeName/fried/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMDU2Mzg4LCJpYXQiOjE2ODA5Njk5ODgsImp0aSI6IjdhNTM0ZWE0ZDNlMTRjY2ViY2RmZDk5MDkxOTQ1Njc4IiwidXNlcl9pZCI6Mn0.LMD6-dsRZVs0qxDIh7UYtPag625orpUzbU9AagjwrEM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search/ByRecipeName/fried/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search",
+						"ByRecipeName",
+						"fried",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/search/ByIngredients/rice/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search/ByIngredients/rice/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search",
+						"ByIngredients",
+						"rice",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/search/ByCreator/Max/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search/ByCreator/Max/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search",
+						"ByCreator",
+						"Max",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,4 @@
+npm install react-bootstrap bootstrap
+npm install react-router-dom
+npm install pure-react-carousel
+npm install react-native-select-multiple

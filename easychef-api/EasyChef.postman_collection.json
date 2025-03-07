@@ -1,0 +1,1589 @@
+{
+	"info": {
+		"_postman_id": "e9bf17c4-dbab-45e4-ab62-76be1c86f44c",
+		"name": "EasyChef",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "matt",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "lant",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "6555555555",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mattlant@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								},
+								{
+									"key": "password1",
+									"value": "{{password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverUrl}}/accounts/signup/",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"accounts",
+								"signup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set(\"token\", \"someToken\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "max",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Wang",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "6555555555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "wsdddhganB@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "qzrtt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password1",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4ODYwMjU5LCJpYXQiOjE2Nzg3NzM4NTksImp0aSI6ImUxZjMwZTJjMDllMTQzYjJhYjY5NTAyYTMxMmFiMTg0IiwidXNlcl9pZCI6Mn0.p1ck7-HBDHbU8bG0ktUOE-arnHRgvC9H9DqDhTAD-SU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "serving",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverUrl}}/accounts/logout/",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"accounts",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"token\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "max",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Wang",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "6555555555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "wsdddhganB@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "mattlant",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password1",
+									"type": "text"
+								},
+								{
+									"key": "password1",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4ODYwMjU5LCJpYXQiOjE2Nzg3NzM4NTksImp0aSI6ImUxZjMwZTJjMDllMTQzYjJhYjY5NTAyYTMxMmFiMTg0IiwidXNlcl9pZCI6Mn0.p1ck7-HBDHbU8bG0ktUOE-arnHRgvC9H9DqDhTAD-SU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "serving",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{serverUrl}}/accounts/login/",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"accounts",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recipes",
+			"item": [
+				{
+					"name": "Create a Recipe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{$randomWords}}\",\r\n  \"diets\": \"{{$randomBsAdjective}}\",\r\n  \"cuisine\": \"{{$randomCountry}}\",\r\n  \"serving\": 4,\r\n  \"ingredients\": [\r\n    1,2,3,4,5,6,7,8,9,10\r\n  ],\r\n  \"steps\": [\r\n    1,2,3,4,5,6,7,8,9,10\r\n  ],\r\n  \"prep_time\": {{$randomInt}},\r\n  \"cooking_time\": {{$randomInt}},\r\n  \"base_recipe\": null\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverUrl}}/recipes/create/",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"recipes",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Recipes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{serverUrl}}/recipes/allrecipes/",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"recipes",
+								"allrecipes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Random Ingredient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{$randomWords}}\",\r\n  \"quantity\": \"{{$randomInt}} grams\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverUrl}}/recipes/createingre/",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"recipes",
+								"createingre",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Random Step",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"description\": \"{{$randomVerb}}\",\r\n  \"prep_time\": \"{{$randomInt}} minutes\",\r\n  \"cooking_time\": \"{{$randomInt}} minutes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverUrl}}/recipes/createstep/",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"recipes",
+								"createstep",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recipe with Id 2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "max",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Wang",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "6555555555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "wsdddhganB@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "qzrtt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password1",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4ODYwMjU5LCJpYXQiOjE2Nzg3NzM4NTksImp0aSI6ImUxZjMwZTJjMDllMTQzYjJhYjY5NTAyYTMxMmFiMTg0IiwidXNlcl9pZCI6Mn0.p1ck7-HBDHbU8bG0ktUOE-arnHRgvC9H9DqDhTAD-SU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "serving",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "fried noodle",
+									"type": "text"
+								},
+								{
+									"key": "diets",
+									"value": "sugar free",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "[{\"name\": \"noodle\", \"amount\": \"500 grams\"},{\"name\": \"salt\", \"amount\": \"2 grams\"} ]",
+									"type": "text"
+								},
+								{
+									"key": "steps",
+									"value": "[{\"step 1\": \"add rice\"},{\"step 2\": \"add salt\"}]",
+									"type": "text"
+								},
+								{
+									"key": "creator",
+									"value": "max",
+									"type": "text"
+								},
+								{
+									"key": "cuisine",
+									"value": "worldwide",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/recipes/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"recipes",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recipes (List)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/recipes/allrecipes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"recipes",
+								"allrecipes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8000/recipes/2/change_serving/20/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "max",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Wang",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "6555555555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "wsdddhganB@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "qzrtt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password1",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4ODYwMjU5LCJpYXQiOjE2Nzg3NzM4NTksImp0aSI6ImUxZjMwZTJjMDllMTQzYjJhYjY5NTAyYTMxMmFiMTg0IiwidXNlcl9pZCI6Mn0.p1ck7-HBDHbU8bG0ktUOE-arnHRgvC9H9DqDhTAD-SU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "serving",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "fried noodle",
+									"type": "text"
+								},
+								{
+									"key": "diets",
+									"value": "sugar free",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "[{\"name\": \"noodle\", \"amount\": \"500 grams\"},{\"name\": \"salt\", \"amount\": \"2 grams\"} ]",
+									"type": "text"
+								},
+								{
+									"key": "steps",
+									"value": "[{\"step 1\": \"add rice\"},{\"step 2\": \"add salt\"}]",
+									"type": "text"
+								},
+								{
+									"key": "creator",
+									"value": "max",
+									"type": "text"
+								},
+								{
+									"key": "cuisine",
+									"value": "worldwide",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/recipes/2/change_serving/20/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"recipes",
+								"2",
+								"change_serving",
+								"20",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8000/recipes/create/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "max",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Wang",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "6555555555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "wsdddhganB@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "qzrtt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password1",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4ODYwMjU5LCJpYXQiOjE2Nzg3NzM4NTksImp0aSI6ImUxZjMwZTJjMDllMTQzYjJhYjY5NTAyYTMxMmFiMTg0IiwidXNlcl9pZCI6Mn0.p1ck7-HBDHbU8bG0ktUOE-arnHRgvC9H9DqDhTAD-SU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "serving",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "fried rice",
+									"type": "text"
+								},
+								{
+									"key": "diets",
+									"value": "sugar free",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "[{\"name\": \"rice\", \"amount\": \"500 grams\"},{\"name\": \"salt\", \"amount\": \"2 grams\"} ]",
+									"type": "text"
+								},
+								{
+									"key": "steps",
+									"value": "[{\"step 1\": \"add rice\"},{\"step 2\": \"add salt\"}]",
+									"type": "text"
+								},
+								{
+									"key": "creator",
+									"value": "max",
+									"type": "text"
+								},
+								{
+									"key": "cuisine",
+									"value": "worldwide",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/recipes/create/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"recipes",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8000/recipes/3/edit/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "max",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Wang",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "6555555555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "wsdddhganB@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "qzrtt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password1",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4ODYwMjU5LCJpYXQiOjE2Nzg3NzM4NTksImp0aSI6ImUxZjMwZTJjMDllMTQzYjJhYjY5NTAyYTMxMmFiMTg0IiwidXNlcl9pZCI6Mn0.p1ck7-HBDHbU8bG0ktUOE-arnHRgvC9H9DqDhTAD-SU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "serving",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "fried noodle",
+									"type": "text"
+								},
+								{
+									"key": "diets",
+									"value": "sugar free",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "[{\"name\": \"rice\", \"amount\": \"1000 grams\"},{\"name\": \"salt\", \"amount\": \"2 grams\"} ]",
+									"type": "text"
+								},
+								{
+									"key": "steps",
+									"value": "[{\"step 1\": \"add rice\"},{\"step 2\": \"add salt\"}]",
+									"type": "text"
+								},
+								{
+									"key": "creator",
+									"value": "max",
+									"type": "text"
+								},
+								{
+									"key": "cuisine",
+									"value": "worldwide",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/recipes/3/edit/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"recipes",
+								"3",
+								"edit",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8000/recipes/combine/3/4/5/10/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "max",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Wang",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "6555555555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "wsdddhganB@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "qzrtt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password1",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4ODYwMjU5LCJpYXQiOjE2Nzg3NzM4NTksImp0aSI6ImUxZjMwZTJjMDllMTQzYjJhYjY5NTAyYTMxMmFiMTg0IiwidXNlcl9pZCI6Mn0.p1ck7-HBDHbU8bG0ktUOE-arnHRgvC9H9DqDhTAD-SU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "serving",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "fried noodle",
+									"type": "text"
+								},
+								{
+									"key": "diets",
+									"value": "sugar free",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "[{\"name\": \"rice\", \"amount\": \"1000 grams\"},{\"name\": \"salt\", \"amount\": \"2 grams\"} ]",
+									"type": "text"
+								},
+								{
+									"key": "steps",
+									"value": "[{\"step 1\": \"add rice\"},{\"step 2\": \"add salt\"}]",
+									"type": "text"
+								},
+								{
+									"key": "creator",
+									"value": "max",
+									"type": "text"
+								},
+								{
+									"key": "cuisine",
+									"value": "worldwide",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/recipes/combine/3/4/5/10/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"recipes",
+								"combine",
+								"3",
+								"4",
+								"5",
+								"10",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8000/recipes/3/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "max",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Wang",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "6555555555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "wsdddhganB@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "qzrtt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password1",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4ODYwMjU5LCJpYXQiOjE2Nzg3NzM4NTksImp0aSI6ImUxZjMwZTJjMDllMTQzYjJhYjY5NTAyYTMxMmFiMTg0IiwidXNlcl9pZCI6Mn0.p1ck7-HBDHbU8bG0ktUOE-arnHRgvC9H9DqDhTAD-SU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "serving",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "fried noodle",
+									"type": "text"
+								},
+								{
+									"key": "diets",
+									"value": "sugar free",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "[{\"name\": \"rice\", \"amount\": \"1000 grams\"},{\"name\": \"salt\", \"amount\": \"2 grams\"} ]",
+									"type": "text"
+								},
+								{
+									"key": "steps",
+									"value": "[{\"step 1\": \"add rice\"},{\"step 2\": \"add salt\"}]",
+									"type": "text"
+								},
+								{
+									"key": "creator",
+									"value": "max",
+									"type": "text"
+								},
+								{
+									"key": "cuisine",
+									"value": "worldwide",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/recipes/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"recipes",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8000/search/ByRecipeName/fried rice/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "max",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Wang",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "6555555555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "wsdddhganB@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "qzrtt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password1",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4ODYwMjU5LCJpYXQiOjE2Nzg3NzM4NTksImp0aSI6ImUxZjMwZTJjMDllMTQzYjJhYjY5NTAyYTMxMmFiMTg0IiwidXNlcl9pZCI6Mn0.p1ck7-HBDHbU8bG0ktUOE-arnHRgvC9H9DqDhTAD-SU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "serving",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "fried noodle",
+									"type": "text"
+								},
+								{
+									"key": "diets",
+									"value": "sugar free",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "[{\"name\": \"rice\", \"amount\": \"1000 grams\"},{\"name\": \"salt\", \"amount\": \"2 grams\"} ]",
+									"type": "text"
+								},
+								{
+									"key": "steps",
+									"value": "[{\"step 1\": \"add rice\"},{\"step 2\": \"add salt\"}]",
+									"type": "text"
+								},
+								{
+									"key": "creator",
+									"value": "max",
+									"type": "text"
+								},
+								{
+									"key": "cuisine",
+									"value": "worldwide",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/search/ByRecipeName/fried rice/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"search",
+								"ByRecipeName",
+								"fried rice",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8000/search/ByCreator/max/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "max",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Wang",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "6555555555",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "wsdddhganB@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "qzrtt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password1",
+									"value": "qwertyuiop1234",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc4ODYwMjU5LCJpYXQiOjE2Nzg3NzM4NTksImp0aSI6ImUxZjMwZTJjMDllMTQzYjJhYjY5NTAyYTMxMmFiMTg0IiwidXNlcl9pZCI6Mn0.p1ck7-HBDHbU8bG0ktUOE-arnHRgvC9H9DqDhTAD-SU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "serving",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "fried noodle",
+									"type": "text"
+								},
+								{
+									"key": "diets",
+									"value": "sugar free",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "[{\"name\": \"rice\", \"amount\": \"1000 grams\"},{\"name\": \"salt\", \"amount\": \"2 grams\"} ]",
+									"type": "text"
+								},
+								{
+									"key": "steps",
+									"value": "[{\"step 1\": \"add rice\"},{\"step 2\": \"add salt\"}]",
+									"type": "text"
+								},
+								{
+									"key": "creator",
+									"value": "max",
+									"type": "text"
+								},
+								{
+									"key": "cuisine",
+									"value": "worldwide",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/search/ByCreator/max/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"search",
+								"ByCreator",
+								"max",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.globals.set(\"username\",  \"mattlant\");",
+					"pm.globals.set(\"password\", \"password1\");",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,16 @@
+
+.slider_controls {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .custom-btn {
+    order: 1;
+    width: 49%;
+  }
+  
+  .custom-btn2 {
+    order: 2;
+    width: 49%;
+  }
+  

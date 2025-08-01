@@ -1,76 +1,120 @@
-# School Project - EasyChef
-This was a team project developed for **CSC309: Web Development** at the **University of Toronto**
+# 🧑‍🍳 EasyChef – Full-Stack Recipe Management Platform
 
-## 🔧 Full-Stack / General Project Highlights
+A full-stack recipe sharing platform where users can create, customize, and explore recipes by diet, cuisine, and ingredients — built using React, Django REST Framework, and SQLite.
 
-* Developed a full-stack recipe-sharing web application with secure authentication, dynamic ingredient scaling, and interactive social features
-* Delivered a complete three-phase system: static UI mockup (HTML/CSS), Django REST API backend, and integrated React frontend SPA
-* Managed full development lifecycle using GitLab, including structured commits, team collaboration, and phase-based versioning
-* Coordinated in a 3-person Agile team, incorporating TA feedback, iterative improvements, and live demo evaluations
+> 🔐 Includes secure authentication, token-based API access, and dynamic ingredient scaling
+> 🔄 Supports interactive recipe creation, editable shopping lists, and real-time user interaction features
+> ✅ Delivered as a fully functional end-to-end system across three major development phases
 
 ---
 
-## ⚛️ Front-End (React) Contributions
+## 🚀 Features
 
-* Built a single-page application using **React** and **React Router**, with protected routes and token-based authentication
-* Designed multi-step forms for recipe creation using modular React components and dynamic form state management
-* Integrated React with backend APIs for real-time recipe creation, user authentication, and comment/rating functionality
-* Implemented conditional routing and navigation flows (e.g., redirect after login, creation success pages)
-* Developed frontend validation, error handling, and asynchronous state updates for smooth user experience
-* Used custom React hooks to manage authentication tokens and persist session state via `localStorage`
-
----
-
-## 🔙 Back-End (Django REST Framework) Contributions
-
-* Engineered RESTful APIs using **Django REST Framework**, covering recipes, users, ingredients, steps, comments, ratings, and favorites
-* Designed a **custom Django user model** with fields for avatar, phone number, and profile info, integrated with token authentication
-* Implemented secure token-based authentication and role-based access control for protected endpoints
-* Serialized nested data models using custom DRF serializers with both write-optimized and read-optimized structures
-* Built endpoints for rating, marking favorites, dynamic serving size adjustment, and shopping list aggregation
-* Developed and documented API collection using **Postman**, including pre-filled payloads, headers, and token-based testing flows
-* Configured pagination, autocomplete, and advanced filtering on list endpoints to support scalable UI queries
+* 🍽️ **Dynamic Recipe Builder**: Create custom recipes with step-by-step instructions, ingredients, images, and videos
+* 🧮 **Smart Serving Adjustments**: Real-time ingredient scaling when changing serving sizes
+* 💬 **Social Features**: Comment, rate, and favorite recipes — track your interactions and discover top-rated meals
+* 🛒 **Shopping Cart Generator**: Aggregate ingredients across recipes and auto-compute combined totals
+* 🔐 **Secure Token Auth**: All critical endpoints protected with token-based user authentication
+* 🧠 **Autocomplete Search & Filtering**: Search by name, cuisine, or ingredient with support for filters and sorting
 
 ---
 
-## 🛠️ Backend Logic & Features
+## 🧱 Tech Stack
 
-* Built logic for scaling ingredient quantities dynamically based on serving size changes, using string parsing and ratio math
-* Created endpoints to duplicate existing recipes and their relationships (ingredients, steps) for rapid reuse
-* Used session storage to implement a user shopping cart that aggregates ingredient quantities across multiple recipes
-* Integrated business logic for personalized views: user’s recipes, favorites, and interaction history
-* Applied validation and access checks (e.g., ownership enforcement on edit/delete) to ensure data integrity and security
+| Language                     | Libraries & Frameworks                  | Infrastructure                      |
+| ---------------------------- | --------------------------------------- | ----------------------------------- |
+| JavaScript, Python, HTML/CSS, Bash | React, Django REST Framework, Bootstrap | SQLite, Ubuntu, Postman |
 
 ---
 
-## 🧪 DevOps / Setup / Tooling
+## 🔍 Project Overview
 
-* Wrote **cross-platform automation scripts** (`startup.sh`, `run.sh`) to provision Python environments, install dependencies, run migrations, and start servers
-* Configured consistent runtime environment targeting **Ubuntu 20.04**, supporting compatibility across TA and local testing setups
-* Structured frontend/backend integration through environment-driven configuration (`global.config`), enabling clean separation and future deploy readiness
-* Created seed database content for visual demo (20+ realistic recipes with diet, cuisine, media, steps) to showcase system functionality
+EasyChef was built over three progressive development phases:
 
----
+1. **Phase 1 – UI/UX Demo**:
+   HTML/CSS static prototype with full page navigation and mock content using Bootstrap.
+   Focus on user experience, layout design, and semantic HTML structure.
 
-## 🧠 Design & Architecture Thinking
+2. **Phase 2 – Backend API**:
+   Implemented all core features via Django REST Framework with a custom user model and full token-based auth.
+   Included rating system, comment support, autocomplete, and paginated search.
 
-* Modeled application state and user workflows from stakeholder/user stories using Agile-style iteration planning
-* Applied modular design to both front-end components and backend serializers/views for long-term maintainability
-* Leveraged DRY principles in DRF views by combining `ListCreateAPIView`, `RetrieveAPIView`, and `UpdateAPIView` for reuse and consistency
-* Ensured RESTful API contract discipline by separating concerns (e.g., `create_step`, `save_ingredient`, `update_recipe`)
-
----
-
-## 💬 Communication & Soft Skills
-
-* Collaborated in weekly check-ins and mentor sessions to validate technical decisions, handle blockers, and ensure team alignment
-* Presented final project in a simulated business-owner-style interview with TA, emphasizing product usability and polish
-* Acted as full-stack liaison across frontend/backend integration, ensuring all user flows were testable and shippable
+3. **Phase 3 – React Frontend Integration**:
+   Built a complete SPA using React Router, with dynamic frontend-backend interactions and full CRUD capabilities.
+   Custom hooks manage auth tokens, and all pages support in-place updates and navigation flow.
 
 ---
 
-## 📌 Select Achievements / Impact-Oriented Bullets
+## 📊 Backend Highlights
 
-* Delivered a **fully functional MVP** with authentication, user content creation, social interactions in <12 weeks
-* Achieved 100% endpoint coverage with real-time integration testing via Postman and React components
-* Successfully created a full-stack web app that passed all interview checkpoints and received top-tier evaluation
+| Feature                 | Implementation Details                                            |
+| ----------------------- | ----------------------------------------------------------------- |
+| 🔐 Token Auth           | DRF Token Authentication with protected endpoints                 |
+| 🧩 Custom User Model    | Extended default User to include avatar, phone, etc.              |
+| 📋 CRUD API Design      | Recipes, Ingredients, Steps, Comments fully covered               |
+| 🔄 Nested Serialization | RecipeSerializer handles embedded lists for ingredients/steps     |
+| 📈 Rating Logic         | JSON fields to track per-user ratings and auto-calculate averages |
+| 📌 Favorite Logic       | Toggleable mark/unmark with aggregation of total likes            |
+| 🛒 Session-Based Cart   | Combined ingredient quantities across multiple recipes            |
+
+---
+
+## ⚛️ Frontend Highlights
+
+| Feature                    | Implementation Details                                            |
+| -------------------------- | ----------------------------------------------------------------- |
+| 🧠 React SPA               | Built with React Router for dynamic routing and protected pages   |
+| 📥 Modular Forms           | Multi-step recipe creation flow with ingredient and step handling |
+| 🔒 Auth Integration        | Custom `useToken` hook and global config usage                    |
+| 📤 API Chaining            | Sequential creation of steps, ingredients, and final recipe       |
+| ✅ UX Flows                 | Login, Signup, Success pages, and data-driven rendering           |
+| 🧪 Local State Management  | `useState` and class-based components for controlled logic        |
+| 🔗 Config-Driven Endpoints | Used `global.config` for flexible API and auth integration        |
+
+---
+
+## 🧠 What I Learned
+
+* Gained hands-on experience with full-stack application delivery and version control in a team setting
+* Learned to manage state across asynchronous frontend/backend operations
+* Designed clean REST APIs and learned nested serialization strategies in Django
+* Applied best practices for UX flows, token-based security, and responsive UI design
+* Gained fluency in debugging cross-stack issues, from React components to backend API logic
+
+---
+
+## 🏁 How to Run Locally
+
+### 🧩 Prerequisites
+
+* Python 3.10+
+* Node.js 18+
+* Ubuntu 20.04 (recommended)
+* `pip`, `virtualenv`, and `npm` installed
+
+### ⚙️ Setup and Launch
+
+```bash
+# clone the repo
+git clone https://github.com/Dam-Sam/EasyChef.git
+cd EasyChef
+
+# setup environment
+./startup.sh    # creates virtualenv, installs packages, applies migrations, runs npm install
+
+# run backend and frontend servers
+./run.sh
+```
+
+> *Tested on clean Ubuntu environment with default dependencies available. Uses SQLlite and static seed data.*
+
+---
+
+## 🤝 Collaboration & Credits
+
+This was a team project developed for **CSC309: Web Development** at the **University of Toronto**.
+
+* 🧑‍💻 Team of 3
+* 👨‍🏫 Mentored and evaluated via TA interviews
+* ✅ All contributions tracked in GitLab using commits and code ownership
+* 🔁 Agile workflow with iterative phases, check-ins, and peer design reviews
